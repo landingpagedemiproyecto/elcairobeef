@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +13,12 @@
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#121212',
-                            card: '#1e1e1e',
-                            accent: '#C5A880', // Dorado/Bronce rústico elegante
-                            red: '#991b1b',
+                            dark: '#0a0a0a',
+                            card: '#141414',
+                            border: '#262626',
+                            accent: '#C5A880', // Dorado/Bronce elegante
+                            red: '#8b0000',    // Rojo carmesí profundo acorde al IG
+                            brightRed: '#b91c1c'
                         }
                     }
                 }
@@ -24,22 +26,28 @@
         }
     </script>
 </head>
-<body class="bg-brand-dark text-gray-100 font-sans antialiased">
+<body class="bg-brand-dark text-gray-100 font-sans antialiased selection:bg-brand-accent selection:text-black">
 
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-40 bg-brand-dark/95 backdrop-blur border-b border-gray-800">
+    <!-- Header / Navbar estilo Instagram Brand -->
+    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <span class="text-2xl font-extrabold tracking-wider text-brand-accent uppercase">El Cairo Beef</span>
+                <!-- Sello circular simulando el logo del IG -->
+                <div class="w-10 h-10 rounded-full border border-brand-accent flex items-center justify-center bg-black overflow-hidden">
+                    <span class="text-brand-accent font-black text-xs tracking-tighter">ECB</span>
+                </div>
+                <div>
+                    <span class="text-xl font-black tracking-wider text-white uppercase block leading-none">El Cairo Beef</span>
+                    <span class="text-[10px] text-brand-accent tracking-widest uppercase">Cortes Finos & Ganadería</span>
+                </div>
             </div>
             <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
-                <a href="#combos" class="hover:text-brand-accent transition">Combos y Packs</a>
-                <a href="#proceso" class="hover:text-brand-accent transition">Confianza y Proceso</a>
-                <a href="#cortes" class="hover:text-brand-accent transition">Cortes Individuales</a>
+                <a href="#galeria-ig" class="hover:text-brand-accent transition">Publicaciones & Combos</a>
+                <a href="#proceso" class="hover:text-brand-accent transition">Calidad y Proceso</a>
             </nav>
             <div>
-                <a href="https://wa.me/573227991056?text=Hola%20El%20Cairo%20Beef,%20quiero%20ver%20el%20catálogo%20y%20hacer%20un%20pedido" target="_blank" class="bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-full font-semibold text-sm flex items-center space-x-2 transition shadow-lg shadow-green-900/30">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                <a href="https://wa.me/573227991056?text=Hola%20El%20Cairo%20Beef,%20quiero%20hacer%20un%20pedido" target="_blank" class="bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider flex items-center space-x-2 transition shadow-lg shadow-green-900/30">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
                     <span>322 7991056</span>
                 </a>
             </div>
@@ -47,177 +55,218 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-r from-black via-brand-dark to-neutral-900 py-20 lg:py-28 overflow-hidden border-b border-gray-800">
-        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#C5A880_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <section class="relative bg-gradient-to-b from-black via-brand-dark to-brand-dark py-20 lg:py-28 overflow-hidden border-b border-brand-border">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#C5A880_1px,transparent_1px)] [background-size:24px_24px]"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                <span class="inline-block bg-brand-accent/10 text-brand-accent text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-brand-accent/20">
-                    🥩 Cortes Finos & Ganadería Selecta
-                </span>
+                <div class="inline-flex items-center space-x-2 bg-brand-red/20 text-red-400 text-xs font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full border border-brand-red/30">
+                    <i class="fa-solid fa-fire"></i>
+                    <span>Ganadería Selecta & Maduración Óptima</span>
+                </div>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
                     El Arte de la Buena Carne, <span class="text-brand-accent">Directo a tu Mesa</span>
                 </h1>
-                <p class="text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0">
-                    Seleccionamos los mejores cortes con maduración óptima. Empacados al vacío bajo estrictas normas de salubridad y entregados con cadena de frío garantizada.
+                <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 font-light">
+                    Infiltración perfecta, frescura inigualable y cortes empacados al vacío bajo rigurosas normas de salubridad. Tal como lo ves en nuestro Instagram.
                 </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                    <a href="https://wa.me/573227991056?text=Hola%20El%20Cairo%20Beef,%20quiero%20hacer%20un%20pedido" target="_blank" class="w-full sm:w-auto bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-4 rounded-xl text-center transition flex items-center justify-center space-x-3 shadow-xl shadow-green-900/40">
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="https://wa.me/573227991056?text=Hola%20El%20Cairo%20Beef,%20quiero%20ver%20el%20catálogo%20de%20combos" target="_blank" class="w-full sm:w-auto bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-4 rounded-xl text-center transition flex items-center justify-center space-x-3 shadow-xl shadow-green-900/40 text-sm uppercase tracking-wider">
                         <i class="fa-brands fa-whatsapp text-xl"></i>
                         <span>Pedir por WhatsApp</span>
                     </a>
-                    <a href="#combos" class="w-full sm:w-auto bg-transparent hover:bg-white/5 text-gray-200 border border-gray-700 font-semibold px-8 py-4 rounded-xl text-center transition">
-                        Ver Combos y Galería
+                    <a href="#galeria-ig" class="w-full sm:w-auto bg-brand-card hover:bg-brand-border text-gray-200 border border-brand-border font-semibold px-8 py-4 rounded-xl text-center transition text-sm">
+                        Ver Catálogo Estilo IG
                     </a>
                 </div>
             </div>
+            <!-- Mockup visual tipo escaparate de carnes premium -->
             <div class="lg:col-span-5 relative">
-                <div class="relative mx-auto w-72 h-96 sm:w-80 sm:h-[420px] rounded-2xl overflow-hidden border-2 border-brand-accent/40 shadow-2xl shadow-black bg-neutral-800 flex items-center justify-center p-6 text-center">
-                    <div>
-                        <i class="fa-solid fa-utensils text-brand-accent text-5xl mb-4"></i>
-                        <p class="text-sm text-gray-400 font-medium">Infiltración perfecta, frescura inigualable y empaque al vacío listo para tu cocina o negocio.</p>
+                <div class="relative mx-auto w-full max-w-sm h-[400px] rounded-2xl overflow-hidden border border-brand-accent/30 shadow-2xl bg-neutral-900 flex flex-col justify-end p-6">
+                    <div class="absolute inset-0">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Cortes Finos El Cairo Beef" class="w-full h-full object-cover opacity-50">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    </div>
+                    <div class="relative z-10 space-y-3">
+                        <span class="bg-brand-red text-white text-[10px] font-bold px-2.5 py-1 rounded">Vacío Grado A</span>
+                        <h3 class="text-xl font-bold text-white">Cortes al Peso & Packs</h3>
+                        <p class="text-xs text-gray-300">Atención personalizada inmediata para calcular el gramaje ideal de tu asado.</p>
+                        <div class="bg-black/80 rounded-xl p-3 text-center border border-brand-border">
+                            <p class="text-xs text-gray-300 font-semibold">Haz tu pedido al:</p>
+                            <p class="text-brand-accent font-black text-sm tracking-widest">322 7991056</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery / Combos Section (Inspirado en Instagram) -->
-    <section id="combos" class="py-20 bg-brand-card/30 border-b border-gray-800">
+    <!-- Galería inspirada en el Feed de Instagram -->
+    <section id="galeria-ig" class="py-20 bg-brand-dark border-b border-brand-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <span class="text-brand-accent font-semibold text-sm uppercase tracking-wider">Galería de Publicaciones y Combos</span>
-                <h2 class="text-3xl font-black text-white sm:text-4xl">Elige tu Combo y Haz tu Pedido al Instante</h2>
-                <p class="text-gray-400">Inspirados en nuestras publicaciones. Selecciona tu pack favorito y escríbenos directamente para coordinar peso y entrega.</p>
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                <span class="text-brand-accent font-bold text-xs uppercase tracking-widest bg-brand-accent/10 px-3 py-1 rounded-full border border-brand-accent/20">Basado en @elcairobeef</span>
+                <h2 class="text-3xl font-black text-white sm:text-4xl">Elige tu Opción Favorita</h2>
+                <p class="text-gray-400 text-sm">Haz clic en el botón de cada publicación para cotizar o pedir exactamente lo que ves en nuestro Instagram.</p>
             </div>
 
-            <!-- Grid de Combos / Instagram Style Cards -->
+            <!-- Grid de Publicaciones / Combos con Imágenes Reales -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Combo 1: Formas de decir Te Quiero -->
-                <div class="bg-brand-card rounded-2xl overflow-hidden border border-gray-800 flex flex-col justify-between group hover:border-brand-accent transition">
-                    <div class="h-60 bg-neutral-800 relative flex items-center justify-center overflow-hidden">
-                        <span class="absolute top-4 left-4 bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-full z-10">Especial Regalos</span>
-                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
-                        <div class="text-center p-6 relative z-10">
-                            <i class="fa-solid fa-heart text-brand-accent text-4xl mb-2"></i>
-                            <p class="text-white font-bold text-lg">Formas de Decir Te Quiero</p>
+                <!-- Card 1: Formas de decir te quiero -->
+                <div class="bg-brand-card rounded-2xl overflow-hidden border border-brand-border flex flex-col justify-between group hover:border-brand-accent transition duration-300">
+                    <div class="h-64 relative overflow-hidden bg-neutral-900">
+                        <div class="absolute top-3 left-3 bg-brand-red text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded shadow z-10">
+                            Especial Aniversario
                         </div>
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Formas de decir te quiero" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
                     </div>
                     <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xl font-bold text-white">Combo Romántico / Aniversarios</h3>
-                            <p class="text-gray-400 text-sm mt-2">Una experiencia gastronómica única para sorprender. Cortes selectos madurados de alta gama ideales para una cena inolvidable en casa.</p>
+                            <span class="text-xs text-brand-accent font-bold uppercase tracking-wider block mb-1">Combo Romántico</span>
+                            <h3 class="text-white font-black text-lg mb-1">¿Formas de Decir Te Quiero?</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">Cortes finos seleccionados para cenas especiales en pareja. Empaque impecable al vacío.</p>
                         </div>
-                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
-                            <span class="text-brand-accent font-bold text-xs">📲 Pedido Rápido</span>
-                            <a href="https://wa.me/573227991056?text=Hola%20El%20Cairo%20Beef,%20estoy%20interesado%20en%20el%20Combo%20Formas%20de%20Decir%20Te%20Quiero" target="_blank" class="bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition flex items-center space-x-2">
-                                <i class="fa-brands fa-whatsapp text-lg"></i>
-                                <span>Pedir Combo</span>
+                        <div class="pt-4 border-t border-brand-border flex items-center justify-between">
+                            <span class="text-[11px] font-bold text-gray-400">📲 322 7991056</span>
+                            <a href="https://wa.me/573227991056?text=Hola%20El%20Cairo%20Beef,%20quiero%20pedir%20el%20combo%20Formas%20de%20Decir%20Te%20Quiero" target="_blank" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition flex items-center space-x-1.5 shadow-md shadow-green-900/30">
+                                <i class="fa-brands fa-whatsapp text-sm"></i>
+                                <span>Pedir Pedido</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Combo 2: Kit Asador / Ribeye & Marmoreo -->
-                <div class="bg-brand-card rounded-2xl overflow-hidden border border-gray-800 flex flex-col justify-between group hover:border-brand-accent transition">
-                    <div class="h-60 bg-neutral-800 relative flex items-center justify-center overflow-hidden">
-                        <span class="absolute top-4 left-4 bg-brand-accent text-neutral-900 text-xs font-bold px-3 py-1 rounded-full z-10">Más Vendido</span>
-                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
-                        <div class="text-center p-6 relative z-10">
-                            <i class="fa-solid fa-fire text-brand-accent text-4xl mb-2"></i>
-                            <p class="text-white font-bold text-lg">Kit Maestro del Asado</p>
+                <!-- Card 2: Ribeye & Marmoreo Perfecto -->
+                <div class="bg-brand-card rounded-2xl overflow-hidden border border-brand-border flex flex-col justify-between group hover:border-brand-accent transition duration-300">
+                    <div class="h-64 relative overflow-hidden bg-neutral-900">
+                        <div class="absolute top-3 left-3 bg-brand-accent text-black text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded shadow z-10">
+                            Calidad Premium
                         </div>
+                        <img src="https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=800&q=80" alt="Ribeye Marmoreo Perfecto" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
                     </div>
                     <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xl font-bold text-white">Ribeye con Marmoreo Perfecto</h3>
-                            <p class="text-gray-400 text-sm mt-2">Cortes con infiltración de grasa ideal que garantiza suavidad extrema, jugosidad y sabor inigualable en cada bocado a la parrilla.</p>
+                            <span class="text-xs text-brand-accent font-bold uppercase tracking-wider block mb-1">Corte Individual / Asado</span>
+                            <h3 class="text-white font-black text-lg mb-1">RIB EYE & Marmoreo Perfecto</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">Infiltración de grasa ideal para fundirse en cada bocado. Porcionado al peso exacto que requieras.</p>
                         </div>
-                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
-                            <span class="text-brand-accent font-bold text-xs">📲 Pedido Rápido</span>
-                            <a href="https://wa.me/573227991056?text=Hola%20El%20Cairo%20Beef,%20quiero%20pedir%20el%20Kit%20Maestro%20del%20Asado%20(Ribeye)" target="_blank" class="bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition flex items-center space-x-2">
-                                <i class="fa-brands fa-whatsapp text-lg"></i>
-                                <span>Pedir Combo</span>
+                        <div class="pt-4 border-t border-brand-border flex items-center justify-between">
+                            <span class="text-[11px] font-bold text-gray-400">📲 322 7991056</span>
+                            <a href="https://wa.me/573227991056?text=Hola%20El%20Cairo%20Beef,%20estoy%20interesado%20en%20el%20Ribeye%20con%20marmoreo%20perfecto" target="_blank" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition flex items-center space-x-1.5 shadow-md shadow-green-900/30">
+                                <i class="fa-brands fa-whatsapp text-sm"></i>
+                                <span>Pedir Pedido</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Combo 3: Abastece tu Restaurante / Institucional -->
-                <div class="bg-brand-card rounded-2xl overflow-hidden border border-gray-800 flex flex-col justify-between group hover:border-brand-accent transition">
-                    <div class="h-60 bg-neutral-800 relative flex items-center justify-center overflow-hidden">
-                        <span class="absolute top-4 left-4 bg-neutral-700 text-white text-xs font-bold px-3 py-1 rounded-full z-10">B2B / Mayorista</span>
-                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
-                        <div class="text-center p-6 relative z-10">
-                            <i class="fa-solid fa-store text-brand-accent text-4xl mb-2"></i>
-                            <p class="text-white font-bold text-lg">Abastece tu Restaurante</p>
+                <!-- Card 3: Abastece tu Restaurante (B2B) -->
+                <div class="bg-brand-card rounded-2xl overflow-hidden border border-brand-border flex flex-col justify-between group hover:border-brand-accent transition duration-300">
+                    <div class="h-64 relative overflow-hidden bg-neutral-900">
+                        <div class="absolute top-3 left-3 bg-neutral-700 text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded shadow z-10">
+                            Institucional / B2B
                         </div>
+                        <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80" alt="Abastece tu Restaurante" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
                     </div>
                     <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xl font-bold text-white">Pack Comercial por Volumen</h3>
-                            <p class="text-gray-400 text-sm mt-2">Calidad superior garantizada para negocios gastronómicos. Porcionado exacto, excelente rendimiento y estabilidad de suministro.</p>
+                            <span class="text-xs text-brand-accent font-bold uppercase tracking-wider block mb-1">Venta por Volumen</span>
+                            <h3 class="text-white font-black text-lg mb-1">Abastece tu Restaurante</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">Suministro constante, cortes estandarizados y calidad insuperable para restaurantes y negocios exigentes.</p>
                         </div>
-                        <div class="pt-4 border-t border-gray-800 flex items-center justify-between">
-                            <span class="text-brand-accent font-bold text-xs">📲 Cotizar por WhatsApp</span>
-                            <a href="https://wa.me/573227991056?text=Hola%20El%20Cairo%20Beef,%20necesito%20información%20para%20abastecer%20mi%20restaurante" target="_blank" class="bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition flex items-center space-x-2">
-                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <div class="pt-4 border-t border-brand-border flex items-center justify-between">
+                            <span class="text-[11px] font-bold text-gray-400">📲 322 7991056</span>
+                            <a href="https://wa.me/573227991056?text=Hola%20El%20Cairo%20Beef,%20quiero%20cotizar%20abastecimiento%20para%20mi%20restaurante" target="_blank" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition flex items-center space-x-1.5 shadow-md shadow-green-900/30">
+                                <i class="fa-brands fa-whatsapp text-sm"></i>
                                 <span>Cotizar</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- Card 4: Cortes de Cerdo / Pierna Selecta -->
+                <div class="bg-brand-card rounded-2xl overflow-hidden border border-brand-border flex flex-col justify-between group hover:border-brand-accent transition duration-300">
+                    <div class="h-64 relative overflow-hidden bg-neutral-900">
+                        <div class="absolute top-3 left-3 bg-brand-red text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded shadow z-10">
+                            Línea Porcina
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1607305387299-a3d9611cd469?auto=format&fit=crop&w=800&q=80" alt="Cortes de Cerdo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs text-brand-accent font-bold uppercase tracking-wider block mb-1">Especial Cerdo</span>
+                            <h3 class="text-white font-black text-lg mb-1">Cortes de Cerdo & Pierna Selecta</h3>
+                            <p class="text-gray-300 text-sm leading-relaxed">Selección rigurosa de porcino con cortes jugosos listos para asar, ahumar o marinar.</p>
+                        </div>
+                        <div class="pt-4 border-t border-brand-border flex items-center justify-between">
+                            <span class="text-[11px] font-bold text-gray-400">📲 322 7991056</span>
+                            <a href="https://wa.me/573227991056?text=Hola%20El%20Cairo%20Beef,%20estoy%20interesado%20en%20los%20cortes%20de%20cerdo" target="_blank" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition flex items-center space-x-1.5 shadow-md shadow-green-900/30">
+                                <i class="fa-brands fa-whatsapp text-sm"></i>
+                                <span>Pedir Pedido</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Trust & Process Section (Confianza en el Proceso) -->
-    <section id="proceso" class="py-20 bg-brand-card/50 border-b border-gray-800">
+    <!-- Confianza y Proceso -->
+    <section id="proceso" class="py-20 bg-black/40 border-b border-brand-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
                 <h2 class="text-3xl font-black text-white sm:text-4xl">Garantía, Seguridad y Transparencia</h2>
-                <p class="text-gray-400">Queremos que tengas la absoluta tranquilidad de consumir un producto de categoría superior desde el primer clic hasta tu cocina.</p>
+                <p class="text-gray-400 text-sm">Procesos certificados para que compres con total tranquilidad desde el primer clic.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-brand-card p-8 rounded-2xl border border-gray-800 space-y-4">
-                    <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent text-2xl font-bold">
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-border space-y-4">
+                    <div class="w-12 h-12 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent text-xl font-bold border border-brand-accent/20">
                         <i class="fa-solid fa-snowflake"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white">Cadena de Frío Intacta</h3>
-                    <p class="text-gray-400 text-sm">Transportamos bajo temperatura controlada para preservar intactas las propiedades, textura y jugosidad natural de la carne.</p>
+                    <h3 class="text-lg font-bold text-white">Cadena de Frío Intacta</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Transportamos bajo temperatura controlada asegurando que la textura y jugosidad natural permanezcan intactas.</p>
                 </div>
-                <div class="bg-brand-card p-8 rounded-2xl border border-gray-800 space-y-4">
-                    <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent text-2xl font-bold">
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-border space-y-4">
+                    <div class="w-12 h-12 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent text-xl font-bold border border-brand-accent/20">
                         <i class="fa-solid fa-box-archive"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white">Empacado al Vacío</h3>
-                    <p class="text-gray-400 text-sm">Tecnología de empaque grado alimenticio con fecha de corte y vencimiento claras para una conservación impecable.</p>
+                    <h3 class="text-lg font-bold text-white">Empacado al Vacío</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Tecnología de empaque grado alimenticio con trazabilidad y fecha de vencimiento clara para tu total seguridad.</p>
                 </div>
-                <div class="bg-brand-card p-8 rounded-2xl border border-gray-800 space-y-4">
-                    <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent text-2xl font-bold">
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-border space-y-4">
+                    <div class="w-12 h-12 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent text-xl font-bold border border-brand-accent/20">
                         <i class="fa-solid fa-shield-check"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white">Rigor Sanitario</h3>
-                    <p class="text-gray-400 text-sm">Cumplimiento estricto de normas de salubridad en cada fase de manipulación y porcionado.</p>
+                    <h3 class="text-lg font-bold text-white">Rigor Sanitario</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Cumplimiento estricto de normas de salubridad en cada fase de manipulación y porcionado de la carne.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-gray-800 py-12 text-center text-gray-500 text-sm">
+    <footer class="bg-black border-t border-brand-border py-12 text-center text-gray-500 text-xs">
         <div class="max-w-7xl mx-auto px-4 space-y-4">
-            <p class="text-lg font-bold text-brand-accent uppercase tracking-widest">El Cairo Beef</p>
-            <p>Cortes finos y ganadería selecta directo a tu puerta.</p>
-            <p class="text-xs text-gray-600">Línea de pedidos directos: <span class="text-gray-400">322 7991056</span></p>
-            <p class="text-xs text-gray-700">&copy; 2026 El Cairo Beef. Todos los derechos reservados.</p>
+            <div class="flex items-center justify-center space-x-2">
+                <div class="w-8 h-8 rounded-full border border-brand-accent flex items-center justify-center bg-black">
+                    <span class="text-brand-accent font-black text-[10px]">ECB</span>
+                </div>
+                <span class="text-sm font-bold text-white uppercase tracking-widest">El Cairo Beef</span>
+            </div>
+            <p class="text-gray-400">Cortes finos, ganadería selecta y confianza directa a tu puerta.</p>
+            <p class="text-brand-accent font-bold tracking-wider">Línea oficial de pedidos / WhatsApp: 322 7991056</p>
+            <p class="text-gray-600 pt-4">&copy; 2026 El Cairo Beef. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <!-- Floating WhatsApp Button -->
     <div class="fixed bottom-6 right-6 z-50">
-        <a href="https://wa.me/573227991056?text=Hola%20El%20Cairo%20Beef,%20quiero%20hacer%20un%20pedido%20o%20consultar%20combos" target="_blank" class="bg-green-600 hover:bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition transform hover:scale-110">
+        <a href="https://wa.me/573227991056?text=Hola%20El%20Cairo%20Beef,%20quiero%20hacer%20un%20pedido%20o%20consultar%20disponibilidad" target="_blank" class="bg-green-600 hover:bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition transform hover:scale-110 border-2 border-green-400">
             <i class="fa-brands fa-whatsapp text-3xl"></i>
         </a>
     </div>
